@@ -29,8 +29,7 @@ jobs:
 
       - name: Set Branch Credentials
         run: |
-          BRANCH_NAME=${GITHUB_REF##*/}
-          BRANCH_NAME=${BRANCH_NAME^^}
+          BRANCH_NAME=${GITHUB_REF##*/} | tr [a-z] [A-Z]
           echo "BRANCH_ENVIRONMENT_NAME=${BRANCH_NAME}_ENVIRONMENT_NAME" >> $GITHUB_ENV
           
       - name: Deploy 
