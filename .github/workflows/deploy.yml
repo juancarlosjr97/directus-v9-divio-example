@@ -1,0 +1,37 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+      - staging
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Install Python 3
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install Divio CLI
+        run: pip install divio-cli
+
+      - name: Login Divio CLI
+        run: divio login ${{ secrets.DIVIO_LOGIN_TOKEN }}
+
+      - name: Set Branch Credentials
+        run: |
+          BRANCH_NAME=${GITHUB_REF##*/}
+          BRANCH_NAME=${BRANCH_NAME^^}
+          echo "BRANCH_ENVIRONMENT_NAME=${BRANCH_NAME}_ENVIRONMENT_NAME" >> $GITHUB_ENV
+          
+      - name: Deploy 
+        run: divio project deploy ${{ secrets[env.BRANCH_ENVIRONMENT_NAME] }} --remote-id ${{ secrets.DIVIO_PROJECT_ID }} 
