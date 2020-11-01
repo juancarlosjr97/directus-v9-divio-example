@@ -165,9 +165,8 @@ STORAGE_AMAZON_REGION="us-east-1"
 
 The final result is the following Directus instance:
 
-- Test environment:
-  - User:
-  - Password:
-- Live environment:
+- Live environment: https://directus-v9-divio.us.aldryn.io
+  - User: directus-v9-divio@example.com
+  - Password: pass
 
 Feel free to test the final result!
