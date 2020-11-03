@@ -5,7 +5,7 @@ networks:
 
 services:
   db:
-    image: postgres
+    image: postgres:9.6-alpine
     env_file: .env
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
