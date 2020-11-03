@@ -91,7 +91,6 @@ This part will create a AWS S3 storage bucket with the free plan
 1. Clone your repository for local development using divio `divio project setup ${PROJECT_NAME}` and cd into the project
 2. Change to the staging branch `git checkout staging`
 3. Copy the `Dockerfile.example` and replace the current `Dockerfile` on your local repository
-4. Create a new `KEY` and `SECRET` environment variable
 
 ### Part 8 - Database configuration using environment variables
 
@@ -154,14 +153,18 @@ STORAGE_AMAZON_REGION="us-east-1"
 
 4. Add the environment variables to the `Test` environment. Repeat the same process for `Live` environment
 
-### Part 10 - Deployment
+### Part 10 - Adding Key and Secret Env Variables
+
+1. Create a new `KEY` and `SECRET` environment variable on Divio for Test and Live environment
+
+### Part 11 - Deployment
 
 1. Commit the new `Dockerfile`
 2. Visit the project on divio.com and open the logs
 3. Search for `Creating administrator user` and copy the `Email` and `Password`
 4. Visit your `Env URL`, login and change the administrator credentials
 
-### Final Part - Have fun!
+### Part 12 - Final Part - Have fun!
 
 The final result is the following Directus instance:
 
