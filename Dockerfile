@@ -1,4 +1,4 @@
-FROM directus/next:v9.0.0-rc.4
+FROM directus/next:v9.0.0-rc.3
 
 ENV PORT=80
 ENV PUBLIC_URL="/"
