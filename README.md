@@ -4,6 +4,7 @@ This guide is to create a Dockerise Directus v9 using Divio free plan with Conti
 
 Prerequisites
 
+- [GIT](https://git-scm.com/)
 - [Divio account](https://www.divio.com/)
 - [Docker](https://docker.com/)
 - [Python3](https://www.python.org/)
